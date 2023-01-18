@@ -1,0 +1,40 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+//问题描述：输入一个数h，输出高度为h，上底高度为h，且每行比上一行多两个的梯形，如：
+//    ***
+//  *****
+//*******
+
+
+int main() {
+	int h;
+	scanf("%d", &h);
+	for (int i = 0; i < h; ++i) {
+		for (int j = 0; j < 2 * h - 2 - 2 * i; ++j) {
+			printf(" ");
+		}
+		for (int j = 0; j < h + 2 * i; ++j) {
+			printf("*");
+		}
+		printf("\n");
+	}
+}
+
+//不确定数量的输入处理
+int main() {
+	int h;
+	while (scanf("%d", &h) != EOF) {
+		for (int i = 0; i < h; ++i) {
+			for (int j = 0; j < 2 * h - 2 - 2 * i; ++j) {
+				printf(" ");
+			}
+			for (int j = 0; j < h + 2 * i; ++j) {
+				printf("*");
+			}
+			printf("\n");
+		}
+	}
+}
+//scanf函数返回一个整数，表示成功读取的个数，例如%d时读取‘a’返回0，读取4返回1
+//EOF表示文件终止符，VS中ctrl+z，实际上表示数字-1
